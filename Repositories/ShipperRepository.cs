@@ -8,5 +8,6 @@ namespace E_CommerceSystemWithRestAPI.Repositories
 {
     public class ShipperRepository:Repository<Shipper>
     {
+
     }
 }
