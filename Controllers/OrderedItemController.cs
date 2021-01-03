@@ -13,20 +13,44 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     public class OrderedItemController : ApiController
     {
         OrderedItemRepository orderItemRepository = new OrderedItemRepository();
-
+        CustomerRepository customerRepository = new CustomerRepository();
+        ProductRepository productRepository = new ProductRepository();
+        [Route("")]
         public IHttpActionResult GetAll()
         {
             return Ok(orderItemRepository.GetAll());
         }
 
-
-        [Route("")]
-        public IHttpActionResult GetAll(int id)
+        [Route("{username}")]
+        public IHttpActionResult GetItemsInCart(string username)
         {
-            return Ok(orderItemRepository.GetAll().Where(s => s.OrderedItemId == id));
+            Customer customer = customerRepository.GetAll().Where(s => s.Username == username).FirstOrDefault();
+            List<OrderedItem> orderItem = orderItemRepository.GetAll().Where(s => s.CustomerId == customer.CustomerId && s.OderItemStatus == "incart").ToList();
+            foreach(var item in orderItem)
+            {
+                item.Customer = customer;
+                item.Product = productRepository.Get(item.ProductId);
+            }
+            return Ok(orderItem);
         }
 
-        [Route("{pid}")]
+        [Route("{username}/{productId}")]
+        public IHttpActionResult GetCheckDublicate(string username,int productId)
+        {
+            Customer customer = customerRepository.GetAll().Where(s=>s.Username==username).FirstOrDefault();
+            OrderedItem orderedItem = orderItemRepository.GetAll().Where(s => s.ProductId == productId && s.Customer.Username==username).FirstOrDefault();
+            if(orderedItem==null)
+            {
+                return Ok(customer.CustomerId);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.Conflict);
+            }
+
+        }
+
+       /* [Route("{pid}")]
         public IHttpActionResult Get(int pid)
         {
             OrderedItem admin = orderItemRepository.Get(pid);
@@ -38,7 +62,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             {
                 return Ok(admin);
             }
-        }
+        }*/
 
         [Route("")]
         public IHttpActionResult Post(OrderedItem orderedItem)

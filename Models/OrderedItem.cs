@@ -16,7 +16,12 @@ namespace E_CommerceSystemWithRestAPI.Models
         public Product Product { get; set; }
         [Required]
         public string OderItemStatus { get; set; } // incart,purchased
+        [Required]
+        public int CustomerId { get; set; }
+        public Customer Customer { get; set; }
+
         public int? OrderId { get; set; }
         public Order Order { get; set; }
+
     }
 }

@@ -98,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Binding\OrderedItemBinding.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -122,6 +123,10 @@
     <Compile Include="Migrations\202101031255181_Product_Update_FilePath.cs" />
     <Compile Include="Migrations\202101031255181_Product_Update_FilePath.designer.cs">
       <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.cs" />
+    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.designer.cs">
+      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -170,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101031255181_Product_Update_FilePath.resx">
       <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031652255_OrderedItemUpdate.resx">
+      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

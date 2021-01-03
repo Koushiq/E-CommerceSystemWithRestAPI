@@ -28,7 +28,9 @@ namespace E_CommerceSystemWithRestAPI.Models
         [Required]
         public DateTime CreatedAt { get; set; }
         public ICollection<Order> Orders { get; set; }
+
         public ICollection<WishlistItem> WishlistItems { get; set; }
         public ICollection<WalletEntry> WalletEntries { get; set; }
+        public ICollection<OrderedItem> OrderedItems { get; set; }
     }
 }

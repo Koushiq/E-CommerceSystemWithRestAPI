@@ -76,5 +76,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             productRepository.Delete(pid);
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+
     }
 }
