@@ -21,10 +21,14 @@ namespace E_CommerceSystemWithRestAPI.Models
         public string Gender { get; set; }
         [Required]
         public DateTime DOB { get; set; }
-        public float Wallet { get; set; }
+        [Required]
+        public string Address { get; set; }
+        [Required]
+        public float Balance { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
         public ICollection<Order> Orders { get; set; }
         public ICollection<WishlistItem> WishlistItems { get; set; }
+        public ICollection<WalletEntry> WalletEntries { get; set; }
     }
 }

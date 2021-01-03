@@ -18,6 +18,7 @@ namespace E_CommerceSystemWithRestAPI.Models
         [Required]
         public string LastName { get; set; }
         [Required]
+        public string Phonenumber { get; set; }
         public DateTime CreatedAt { get; set; }
         public ICollection<Order> Orders { get; set; }
     }

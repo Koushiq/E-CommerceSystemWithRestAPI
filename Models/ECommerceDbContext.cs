@@ -23,6 +23,7 @@ namespace E_CommerceSystemWithRestAPI.Models
             modelBuilder.Entity<Product>().HasKey<int>(k => k.ProductId);
             modelBuilder.Entity<Shipper>().HasKey<int>(k => k.ShipperId);
             modelBuilder.Entity<WishlistItem>().HasKey<int>(k => k.WishlistItemId);
+            modelBuilder.Entity<WalletEntry>().HasKey<int>(k => k.WalletEntryId);
         }
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -33,5 +34,6 @@ namespace E_CommerceSystemWithRestAPI.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Shipper> Shippers { get; set; }
         public DbSet<WishlistItem> WishlistItems { get; set; }
+        public DbSet<WalletEntry> WalletEntries { get; set; }
     }
 }

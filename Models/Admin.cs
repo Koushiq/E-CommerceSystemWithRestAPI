@@ -20,5 +20,7 @@ namespace E_CommerceSystemWithRestAPI.Models
         public string Role { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
+
+        public ICollection<WalletEntry> WalletEntries { get; set; }
     }
 }
