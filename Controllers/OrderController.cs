@@ -20,7 +20,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             return Ok(orderRepository.GetAll());
         }
 
-        [Route("{id}", Name = "GetOfferById")]
+        [Route("{id}", Name = "GetOrderById")]
         public IHttpActionResult Get(int id)
         {
             var category = orderRepository.Get(id);
@@ -35,7 +35,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Post(Order order)
         {
             orderRepository.Insert(order);
-            string uri = Url.Link("GetOfferById", new { id = order.OrderId });
+            string uri = Url.Link("GetOrderById", new { id = order.OrderId });
             return Created(uri, order);
         }
 
