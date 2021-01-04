@@ -19,7 +19,6 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             return Ok(adminRepository.GetAll());
         }
 
-
         [Route("")]
         public IHttpActionResult GetAll(int id)
         {
