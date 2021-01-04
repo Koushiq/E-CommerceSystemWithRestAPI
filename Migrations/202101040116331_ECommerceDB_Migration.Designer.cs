@@ -7,13 +7,13 @@ namespace E_CommerceSystemWithRestAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class ModelUpdate : IMigrationMetadata
+    public sealed partial class ECommerceDB_Migration : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ModelUpdate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ECommerceDB_Migration));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101021733180_ModelUpdate"; }
+            get { return "202101040116331_ECommerceDB_Migration"; }
         }
         
         string IMigrationMetadata.Source

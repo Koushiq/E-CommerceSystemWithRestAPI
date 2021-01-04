@@ -20,7 +20,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             return Ok(orderRepository.GetAll());
         }
 
-        [Route("{id}", Name = "GetOfferById")]
+        [Route("{id}", Name = "GetOrderById")]
         public IHttpActionResult Get(int id)
         {
             var category = orderRepository.Get(id);

@@ -51,6 +51,12 @@
       <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -68,6 +74,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json">
@@ -91,6 +100,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
@@ -104,13 +114,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101021733180_ModelUpdate.cs" />
-    <Compile Include="Migrations\202101021733180_ModelUpdate.designer.cs">
-      <DependentUpon>202101021733180_ModelUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101030646021_WalletUpdate.cs" />
-    <Compile Include="Migrations\202101030646021_WalletUpdate.designer.cs">
-      <DependentUpon>202101030646021_WalletUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202101040116331_ECommerceDB_Migration.cs" />
+    <Compile Include="Migrations\202101040116331_ECommerceDB_Migration.designer.cs">
+      <DependentUpon>202101040116331_ECommerceDB_Migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -150,11 +156,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101021733180_ModelUpdate.resx">
-      <DependentUpon>202101021733180_ModelUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101030646021_WalletUpdate.resx">
-      <DependentUpon>202101030646021_WalletUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101040116331_ECommerceDB_Migration.resx">
+      <DependentUpon>202101040116331_ECommerceDB_Migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
