@@ -16,18 +16,14 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         CustomerRepository customerRepository = new CustomerRepository();
         ProductRepository productRepository = new ProductRepository();
         OrderRepository orderRepository = new OrderRepository();
+        
         [Route("")]
         public IHttpActionResult GetAll()
         {
             return Ok(orderItemRepository.GetAll());
         }
 
-        [Route("getall/{username}")]
-        public IHttpActionResult GetOrderedItems(string username)
-        {
-            Customer customer = customerRepository.GetAll().Where(s => s.Username == username).FirstOrDefault();
-            return Ok(orderRepository.GetAll().Where(s => s.CustomerId == customer.CustomerId));
-        }
+        
 
         [Route("{username}")]
         public IHttpActionResult GetItemsInCart(string username)
@@ -91,7 +87,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult PutUpdateCart([FromUri] string username)
         {
             Customer customer = customerRepository.GetAll().Where(s => s.Username == username).FirstOrDefault();
-            List<OrderedItem> orderedItems = orderItemRepository.GetAll().Where(s => s.CustomerId == customer.CustomerId).ToList();
+            List<OrderedItem> orderedItems = orderItemRepository.GetAll().Where(s => s.CustomerId == customer.CustomerId && s.OrderId==null).ToList();
             Order order = orderRepository.GetAll().Where(s=>s.CustomerId==customer.CustomerId).LastOrDefault();
             foreach (var item in orderedItems)
             {
