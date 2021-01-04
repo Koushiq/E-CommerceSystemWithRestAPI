@@ -23,7 +23,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult PostLogin(Customer customer)
         {
             Customer c = customerRepository.GetAll().Where(s => s.Username == customer.Username && s.Password == customer.Password).FirstOrDefault();
-            if(c!=null)
+            if (c != null)
             {
                 return Ok(customer);
             }
@@ -31,6 +31,11 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             {
                 return StatusCode(HttpStatusCode.NoContent);
             }
+        }
+        [Route("balance/{username}")]
+        public IHttpActionResult GetBalance(string username)
+        {
+            return Ok(customerRepository.GetAll().Where(s => s.Username == username));
         }
 
 
@@ -71,15 +76,15 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Put([FromUri] int pid, [FromBody] Customer customer)
         {
             customer.CustomerId = pid;
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+           // {
                 customerRepository.Update(customer);
                 return Ok(customer);
-            }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+           // }
+           // else
+           // {
+           //     return BadRequest(ModelState);
+           // }
         }
 
         [Route("{pid}")]
