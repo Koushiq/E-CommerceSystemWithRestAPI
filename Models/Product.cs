@@ -16,6 +16,8 @@ namespace E_CommerceSystemWithRestAPI.Models
         [Required]
         public float Price { get; set; }
         public string Description { get; set; }
+        
+        public string FilePath { get; set; }
         [Required]
         public DateTime CreatedAt { get; set; }
         public DateTime? DeletedAt { get; set; }

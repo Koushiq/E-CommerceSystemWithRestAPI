@@ -19,6 +19,19 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         {
             return Ok(productRepository.GetAll());
         }
+        [Route("~/api/products")]
+        public IHttpActionResult Post(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                productRepository.Insert(product);
+                return StatusCode(HttpStatusCode.Created);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.BadRequest);
+            }
+        }
 
 
         [Route("")]
@@ -41,19 +54,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             }
         }
 
-        [Route("")]
-        public IHttpActionResult Post(Product product)
-        {
-            if (ModelState.IsValid )
-            {
-                productRepository.Insert(product);
-                return StatusCode(HttpStatusCode.Created);
-            }
-            else
-            {
-                return StatusCode(HttpStatusCode.BadRequest);
-            }
-        }
+       
         [Route("{pid}")]
         public IHttpActionResult Put([FromUri]int pid, [FromBody]Product prodcut)
         {
@@ -75,5 +76,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             productRepository.Delete(pid);
             return StatusCode(HttpStatusCode.NoContent);
         }
+
+
     }
 }

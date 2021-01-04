@@ -8,7 +8,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A2EE937E-6FBA-409B-96A6-4033B7C0FFF1}</ProjectGuid>
+    <ProjectGuid>{6534270A-79D2-499D-95B4-95F67B13984D}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -111,6 +111,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\FileUploadController.cs" />
     <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\OrderedItemController.cs" />
@@ -120,9 +121,21 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101040116331_ECommerceDB_Migration.cs" />
-    <Compile Include="Migrations\202101040116331_ECommerceDB_Migration.designer.cs">
-      <DependentUpon>202101040116331_ECommerceDB_Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202101030830022_Initial.cs" />
+    <Compile Include="Migrations\202101030830022_Initial.designer.cs">
+      <DependentUpon>202101030830022_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031045163_ProductUpdate.cs" />
+    <Compile Include="Migrations\202101031045163_ProductUpdate.designer.cs">
+      <DependentUpon>202101031045163_ProductUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031255181_Product_Update_FilePath.cs" />
+    <Compile Include="Migrations\202101031255181_Product_Update_FilePath.designer.cs">
+      <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.cs" />
+    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.designer.cs">
+      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -160,10 +173,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UploadFiles\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101040116331_ECommerceDB_Migration.resx">
-      <DependentUpon>202101040116331_ECommerceDB_Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101030830022_Initial.resx">
+      <DependentUpon>202101030830022_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031045163_ProductUpdate.resx">
+      <DependentUpon>202101031045163_ProductUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031255181_Product_Update_FilePath.resx">
+      <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101031652255_OrderedItemUpdate.resx">
+      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -179,7 +202,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54661</DevelopmentServerPort>
+          <DevelopmentServerPort>58293</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:3001/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

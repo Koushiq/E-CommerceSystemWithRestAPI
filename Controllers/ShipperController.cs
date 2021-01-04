@@ -18,6 +18,20 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         {
             return Ok(shipperRepository.GetAll());
         }
+        [Route("login")]
+        public IHttpActionResult PostLogin(Shipper shipper)
+        {
+            Shipper sh = shipperRepository.GetAll().Where(s => s.Username == shipper.Username && s.Password == shipper.Password).FirstOrDefault();
+            if (sh != null)
+            {
+                return Ok(sh);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+
+        }
 
         [Route("{id}", Name = "GetShipperById")]
         public IHttpActionResult Get(int id)

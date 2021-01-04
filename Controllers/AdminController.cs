@@ -14,18 +14,43 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     {
         AdminRepository adminRepository = new AdminRepository();
 
+        [Route("login")]
+        public IHttpActionResult PostLogin(Admin admin)
+        {
+            Admin a = adminRepository.GetAll().Where(s=>s.Username==admin.Username && s.Password==admin.Password).FirstOrDefault();
+            if(a!=null)
+            {
+                return Ok(a);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+           
+        }
+
+
+        [Route("")]
         public IHttpActionResult GetAll()
         {
             return Ok(adminRepository.GetAll());
         }
-
-        [Route("")]
-        public IHttpActionResult GetAll(int id)
+        [Route("{username}")]
+        public IHttpActionResult GetUser(string username)
         {
-            return Ok(adminRepository.GetAll().Where(s => s.AdminId == id));
+            Admin admin = adminRepository.GetAll().Where(s => s.Username == username).FirstOrDefault();
+            if(admin!=null)
+            {
+                return Ok(admin.Role);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.Unauthorized);
+            }
+           
         }
 
-        [Route("{pid}")]
+        /*[Route("{pid}")]
         public IHttpActionResult Get(int pid)
         {
             Admin admin = adminRepository.Get(pid);
@@ -37,7 +62,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             {
                 return Ok(admin);
             }
-        }
+        }*/
 
         [Route("")]
         public IHttpActionResult Post(Admin admin)

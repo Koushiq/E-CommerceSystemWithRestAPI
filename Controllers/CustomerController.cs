@@ -14,17 +14,52 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     {
         CustomerRepository customerRepository = new CustomerRepository();
 
+        [Route("")]
         public IHttpActionResult GetAll()
         {
             return Ok(customerRepository.GetAll());
         }
+        [Route("login")]
+        public IHttpActionResult PostLogin(Customer customer)
+        {
+            Customer c = customerRepository.GetAll().Where(s => s.Username == customer.Username && s.Password == customer.Password).FirstOrDefault();
+            if (c != null)
+            {
+                return Ok(customer);
+            }
+            else
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+        }
+        [Route("balance/{username}")]
+        public IHttpActionResult GetBalance(string username)
+        {
+            return Ok(customerRepository.GetAll().Where(s => s.Username == username));
+        }
 
 
-        [Route("")]
+        [Route("{id}")]
         public IHttpActionResult GetAll(int id)
         {
             return Ok(customerRepository.GetAll().Where(s => s.CustomerId == id));
         }
+
+        [Route("info/{cid}")]
+        public IHttpActionResult GetCustomerInfo(int cid)
+        {
+            Customer customer = customerRepository.Get(cid);
+            if (customer == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            else
+            {
+                return Ok(customer);
+            }
+        }
+
+
 
         [Route("{pid}")]
         public IHttpActionResult Get(int pid)
@@ -57,15 +92,15 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Put([FromUri] int pid, [FromBody] Customer customer)
         {
             customer.CustomerId = pid;
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+           // {
                 customerRepository.Update(customer);
                 return Ok(customer);
-            }
-            else
-            {
-                return BadRequest(ModelState);
-            }
+           // }
+           // else
+           // {
+           //     return BadRequest(ModelState);
+           // }
         }
 
         [Route("{pid}")]

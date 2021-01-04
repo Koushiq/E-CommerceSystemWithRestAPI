@@ -13,11 +13,28 @@ namespace E_CommerceSystemWithRestAPI.Controllers
     public class OrderController : ApiController
     {
         OrderRepository orderRepository = new OrderRepository();
-
+        CustomerRepository customerRepository = new CustomerRepository();
+        OrderedItemRepository orderedItemRepository = new OrderedItemRepository();
+        ProductRepository productRepository = new ProductRepository();
         [Route("")]
         public IHttpActionResult GetAll()
         {
             return Ok(orderRepository.GetAll());
+        }
+        [Route("getall/{username}")]
+        public IHttpActionResult GetOrderedItems(string username)
+        {
+            Customer customer = customerRepository.GetAll().Where(s => s.Username == username).FirstOrDefault();
+            List<Order> orders = orderRepository.GetAll().Where(s => s.CustomerId == customer.CustomerId).ToList();
+            foreach(var item in orders)
+            {
+                item.OrderedItems = orderedItemRepository.GetAll().Where(s=>s.OrderId==item.OrderId).ToList();
+                foreach(var item2 in item.OrderedItems)
+                {
+                    item2.Product = productRepository.Get(item2.ProductId);
+                }
+            }
+            return Ok(orders);
         }
 
         [Route("{id}", Name = "GetOrderById")]
@@ -35,7 +52,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
         public IHttpActionResult Post(Order order)
         {
             orderRepository.Insert(order);
-            string uri = Url.Link("GetOfferById", new { id = order.OrderId });
+            string uri = Url.Link("GetOrderById", new { id = order.OrderId });
             return Created(uri, order);
         }
 

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace E_CommerceSystemWithRestAPI
 {
@@ -10,7 +11,6 @@ namespace E_CommerceSystemWithRestAPI
     {
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors();
             // Web API configuration and services
 
             // Web API routes
@@ -29,6 +29,8 @@ namespace E_CommerceSystemWithRestAPI
                 constraints: null,
                 handler: new RedirectHandler((message => message.RequestUri.ToString()), "swagger")
             );
+            EnableCorsAttribute enableCorsAttribute = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(enableCorsAttribute);
         }
     }
 }
