@@ -45,6 +45,22 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             return Ok(customerRepository.GetAll().Where(s => s.CustomerId == id));
         }
 
+        [Route("info/{cid}")]
+        public IHttpActionResult GetCustomerInfo(int cid)
+        {
+            Customer customer = customerRepository.Get(cid);
+            if (customer == null)
+            {
+                return StatusCode(HttpStatusCode.NoContent);
+            }
+            else
+            {
+                return Ok(customer);
+            }
+        }
+
+
+
         [Route("{pid}")]
         public IHttpActionResult Get(int pid)
         {

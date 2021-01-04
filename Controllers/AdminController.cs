@@ -20,7 +20,7 @@ namespace E_CommerceSystemWithRestAPI.Controllers
             Admin a = adminRepository.GetAll().Where(s=>s.Username==admin.Username && s.Password==admin.Password).FirstOrDefault();
             if(a!=null)
             {
-                return Ok(admin);
+                return Ok(a);
             }
             else
             {

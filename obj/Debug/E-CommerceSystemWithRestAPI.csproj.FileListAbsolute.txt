@@ -53,4 +53,3 @@ C:\ATP2 Final Term Project\E-CommerceSystemWithRestAPI\bin\Microsoft.CodeDom.Pro
 C:\ATP2 Final Term Project\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.CopyComplete
 C:\ATP2 Final Term Project\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.dll
 C:\ATP2 Final Term Project\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.pdb
-C:\ATP2 Final Term Project\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csprojAssemblyReference.cache
