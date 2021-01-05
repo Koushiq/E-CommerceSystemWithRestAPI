@@ -108,6 +108,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Controllers\OrderedItemController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShipperController.cs" />
+    <Compile Include="Controllers\WalletEntryController.cs" />
     <Compile Include="Controllers\WishlistItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -136,6 +138,10 @@
     <Compile Include="Migrations\202101031652255_OrderedItemUpdate.cs" />
     <Compile Include="Migrations\202101031652255_OrderedItemUpdate.designer.cs">
       <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101050335463_WalletEntry-Update.cs" />
+    <Compile Include="Migrations\202101050335463_WalletEntry-Update.designer.cs">
+      <DependentUpon>202101050335463_WalletEntry-Update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -160,6 +166,7 @@
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\ShipperRepository.cs" />
+    <Compile Include="Repositories\WalletEntryRepository.cs" />
     <Compile Include="Repositories\WishlistItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202101031652255_OrderedItemUpdate.resx">
       <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101050335463_WalletEntry-Update.resx">
+      <DependentUpon>202101050335463_WalletEntry-Update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
