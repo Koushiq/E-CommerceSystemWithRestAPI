@@ -7,13 +7,13 @@ namespace E_CommerceSystemWithRestAPI.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Product_Update_FilePath : IMigrationMetadata
+    public sealed partial class initialCreate : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Product_Update_FilePath));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initialCreate));
         
         string IMigrationMetadata.Id
         {
-            get { return "202101031255181_Product_Update_FilePath"; }
+            get { return "202101042116574_initialCreate"; }
         }
         
         string IMigrationMetadata.Source

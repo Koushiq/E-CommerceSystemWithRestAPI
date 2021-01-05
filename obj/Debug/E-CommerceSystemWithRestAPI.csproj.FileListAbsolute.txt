@@ -103,12 +103,9 @@ F:\Repositories\E-CommerceSystemWithRestAPI\bin\System.Web.Http.xml
 F:\Repositories\E-CommerceSystemWithRestAPI\bin\System.Web.Http.WebHost.xml
 F:\Repositories\E-CommerceSystemWithRestAPI\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csprojAssemblyReference.cache
-F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.Initial.resources
-F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.ProductUpdate.resources
-F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.Product_Update_FilePath.resources
-F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.OrderedItemUpdate.resources
-F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.GenerateResource.cache
 F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.CoreCompileInputs.cache
 F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.CopyComplete
 F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.dll
 F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.pdb
+F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E_CommerceSystemWithRestAPI.Migrations.initialCreate.resources
+F:\Repositories\E-CommerceSystemWithRestAPI\obj\Debug\E-CommerceSystemWithRestAPI.csproj.GenerateResource.cache

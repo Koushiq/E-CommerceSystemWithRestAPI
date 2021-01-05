@@ -117,25 +117,14 @@
     <Compile Include="Controllers\OrderedItemController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShipperController.cs" />
+    <Compile Include="Controllers\WalletEntryController.cs" />
     <Compile Include="Controllers\WishlistItemController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202101030830022_Initial.cs" />
-    <Compile Include="Migrations\202101030830022_Initial.designer.cs">
-      <DependentUpon>202101030830022_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101031045163_ProductUpdate.cs" />
-    <Compile Include="Migrations\202101031045163_ProductUpdate.designer.cs">
-      <DependentUpon>202101031045163_ProductUpdate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101031255181_Product_Update_FilePath.cs" />
-    <Compile Include="Migrations\202101031255181_Product_Update_FilePath.designer.cs">
-      <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.cs" />
-    <Compile Include="Migrations\202101031652255_OrderedItemUpdate.designer.cs">
-      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
+    <Compile Include="Migrations\202101042116574_initialCreate.cs" />
+    <Compile Include="Migrations\202101042116574_initialCreate.designer.cs">
+      <DependentUpon>202101042116574_initialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -160,6 +149,7 @@
     <Compile Include="Repositories\ProductRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Repositories\ShipperRepository.cs" />
+    <Compile Include="Repositories\WalletEntryRepository.cs" />
     <Compile Include="Repositories\WishlistItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,17 +166,8 @@
     <Folder Include="UploadFiles\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202101030830022_Initial.resx">
-      <DependentUpon>202101030830022_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101031045163_ProductUpdate.resx">
-      <DependentUpon>202101031045163_ProductUpdate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101031255181_Product_Update_FilePath.resx">
-      <DependentUpon>202101031255181_Product_Update_FilePath.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202101031652255_OrderedItemUpdate.resx">
-      <DependentUpon>202101031652255_OrderedItemUpdate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202101042116574_initialCreate.resx">
+      <DependentUpon>202101042116574_initialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
